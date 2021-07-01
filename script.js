@@ -9,6 +9,9 @@ let isPenDown=false;
 window.addEventListener("resize",function(e){
     canvas.width=window.innerWidth;
 canvas.height=window.innerHeight-100;
+
+
+drawLineFromDb();
 })
 
 let ctx=canvas.getContext("2d");
