@@ -16,9 +16,11 @@ drawLineFromDb();
 
 let ctx=canvas.getContext("2d");
 
+
 let lineDB=[];
 let redolineDB=[];
 let line=[];
+
 
 
 
@@ -27,7 +29,7 @@ canvas.addEventListener("mousedown",function(e){
     if(redolineDB.length){
         redolineDB=[];
     }
-
+    
    
     let x=e.clientX;
     let y=e.clientY-100;

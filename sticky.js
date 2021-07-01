@@ -85,7 +85,7 @@ else{
             let dy = finalY - initialY;
       
             let {top , left} = StickyDiv.getBoundingClientRect();
-           
+      
             StickyDiv.style.top = top + dy + "px";
             StickyDiv.style.left = left +dx + "px";
       
