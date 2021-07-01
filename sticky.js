@@ -2,11 +2,13 @@
 let sticky=document.querySelector("#sticky");
 
 
-sticky.addEventListener("click",StickyAddOnClick);
+sticky.addEventListener("click",function(e){
+  StickyAddOnClick();
+});
 
 
 
-function StickyAddOnClick(){
+function StickyAddOnClick(imageElement){
 
     let StickyDiv=document.createElement("div");
     StickyDiv.classList.add("sticky");
@@ -18,15 +20,41 @@ function StickyAddOnClick(){
       <i class="fas fa-times"></i>  
     </div>
   </div>
-  <div class="sticky-content" contenteditable="true" >
+ 
 
   </div>`
 
-
   let minimize=StickyDiv.querySelector(".minimize");
-    let close=StickyDiv.querySelector(".close");
-let StickyContent=StickyDiv.querySelector(".sticky-content");
+  let close=StickyDiv.querySelector(".close");
+// let StickyContent=StickyDiv.querySelector(".sticky-content");
 let stickyHeader=StickyDiv.querySelector(".sticky-header");
+
+let StickyContent;
+  
+if(imageElement){
+
+  // <div class="sticky-content" contenteditable="true" >
+
+  let StickyImageDiv=document.createElement("div");
+  StickyImageDiv.classList.add("sticky-image-div");
+  StickyDiv.append(StickyImageDiv);
+  StickyImageDiv.append(imageElement);
+  StickyContent=StickyImageDiv;
+}
+else{
+
+  let StickyContentDiv=document.createElement("div");
+  StickyContentDiv.classList.add("sticky-content");
+  StickyContentDiv.setAttribute("contenteditable","true")
+  StickyDiv.append(StickyContentDiv);
+  StickyContent=StickyContentDiv;
+
+
+
+}
+
+
+ 
 
     
   minimize.addEventListener("click",function(){
@@ -57,8 +85,7 @@ let stickyHeader=StickyDiv.querySelector(".sticky-header");
             let dy = finalY - initialY;
       
             let {top , left} = StickyDiv.getBoundingClientRect();
-            //   sticky => top + dy
-            //  sticky => left + dx
+           
             StickyDiv.style.top = top + dy + "px";
             StickyDiv.style.left = left +dx + "px";
       
