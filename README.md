@@ -8,7 +8,7 @@ A web application where the user can draw on screen using different colors and a
 Client: HTML,CSS,Javascript,Canvas API
 
 
-#Features
+# Features
 
 ![2](https://user-images.githubusercontent.com/68316491/189895019-3c5f47b0-a4e2-4346-a137-b3f4a5ab4e8f.png)
 
